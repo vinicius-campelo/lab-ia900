@@ -4,16 +4,27 @@
 
 ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
 
-## Dados sobre o projeto:
+> ## Dados sobre o projeto:
 
-- Crie um novo repositório no github com um nome a sua preferência;
-- Crie um modelo de previsão com seus devidos pontos de extremidade configurados;
-- Escreva o passo a passo desse processo em um readme.md de como você chegou nessa etapa;
-- Salve nesse repositório o readme.md e o arquivo .json de pontos de extremidade;
-- Compartilhe conosco o link desse repositório através do botão 'entregar projeto'.
+- _Crie um novo repositório no github com um nome a sua preferência;_
+- _Crie um modelo de previsão com seus devidos pontos de extremidade configurados;_
+- _Escreva o passo a passo desse processo em um readme.md de como você chegou nessa etapa;_
+- _Salve nesse repositório o readme.md e o arquivo .json de pontos de extremidade;_
+- _Compartilhe conosco o link desse repositório através do botão 'entregar projeto'._
+
+##
+### Segundo a documentação de especificação do AZURE e videos da DIO devemos seguir o seguinte caminho:
+##
+
+> ## Criar um espaço de trabalho do Aprendizado de Máquina do Azure
+> ## Usar o aprendizado de máquina automatizado para treinar um modelo
+> ## Implantar e testar o modelo
+> ## Testar o serviço implantado
+> ## Limpeza
 
 
-## Entrada teste:
+## Entrada teste e saida:
+> [!IMPORTANT]
 Testando ponto de extremidade parametros
 
 ```json
