@@ -13,11 +13,40 @@
 - _Compartilhe conosco o link desse repositório através do botão 'entregar projeto'._
 
 ##
-### Segundo a documentação de especificação do AZURE e videos da DIO devemos seguir o seguinte caminho:
+### Segundo a documentação devemos seguir essa sequência:
 ##
 
 > ## Criar um espaço de trabalho do Aprendizado de Máquina do Azure
+  1. Acesso ao portal da Azure <pre>https://portal.azure.com</pre>
+  2. Criar um Grupo (Create a resource) seguindo os passos:
+  3. Em Create a resource no menu lateral aparecera um Dashboard e seu campo de busca então digite (Azure Machine Learning) depois clicar em (Create)
+     
+     ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/7d21adca-3e5e-4f55-8455-b16ee5968d1a)
+
+      - Subscription (deixa como esta) pois essa e a assinatura da plataforma;
+      - Resource group (se não existir) create new (nome de grupo desejado sem espaços);
+      - Workspace details
+        - Name (nome exclusivo);
+        - region (Selecione a região geográfica mais próxima);
+        - Storage account (deixa como esta) pois ele foi preenchido ao informar o Name);
+        - Key vault (deixa como esta) pois ele foi preenchido ao informar o Name);
+        - Application insights (deixa como esta) pois ele foi preenchido ao informar o Name);
+        - Os outros links (Networking, Encryption, Identity, Tags, Review + create) não e necessário preencher;
+        - Após o procedimento selecione o botão (Revisar + criar) ou (Review + create) esse processo demora alguns minutos.
+
+ 
+  4. Selecione Iniciar estúdio (ou abra uma nova guia do navegador e navegue até <pre>https://ml.azure.com</pre> Feche todas as mensagens exibidas.
+  5. No estúdio de Aprendizado de Máquina do Azure, você deve ver seu espaço de trabalho recém-criado. Caso contrário, selecione Todos os espaços de trabalho no menu à esquerda e, em seguida, selecione o espaço de trabalho que você acabou de criar.
+
+     ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/4f417994-716a-4e74-8ccc-669216b545cb)
+
+
+
+
+
 > ## Usar o aprendizado de máquina automatizado para treinar um modelo
+
+
 > ## Implantar e testar o modelo
 > ## Testar o serviço implantado
 > ## Limpeza
