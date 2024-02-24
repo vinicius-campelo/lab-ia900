@@ -93,9 +93,16 @@
         - Descrição: Prever aluguéis de ciclos
         - Tipo de computação: Instância de Contêiner do Azure
         - Habilitar autenticação: Selecionado
+  ##
+  ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/81b18663-47ce-45fb-8717-9a5c65a867dc)
+  ##
+  ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/8386f29c-2291-4c10-8235-2f7b70a4cd70)
+
+
   2. Aguarde o início da implantação - isso pode levar alguns segundos. O status de implantação para o ponto de extremidade de aluguel de previsão será indicado na parte principal da 
      página como Em execução.
   3. Aguarde até que o status Implantar seja alterado para Bem-sucedido. Isso pode levar de 5 a 10 minutos.
+
 
 
 > ## Testar o serviço implantado
