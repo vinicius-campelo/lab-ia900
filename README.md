@@ -45,6 +45,76 @@
 
 
 > ## Usar o aprendizado de máquina automatizado para treinar um modelo
+  No estúdio de Aprendizado de Máquina do Azure, exiba a página ML automatizada (em Criação).
+
+  Crie um novo trabalho de ML automatizado com as seguintes configurações, usando Avançar conforme necessário para progredir pela interface do usuário:
+
+  #### Configurações básicas:
+  - Nome do trabalho: mslearn-bike-automl
+  - Novo nome do experimento: mslearn-bike-rental
+  - Descrição: Aprendizado de máquina automatizado para previsão de aluguel de bicicletas
+  - Tags: nenhuma
+
+  #### Tipo de tarefa & data:
+
+  - Selecionar tipo de tarefa: Regressão
+  - Selecionar conjunto de dados: crie um novo conjunto de dados com as seguintes configurações:
+  - Tipo de dados:
+  - Nome: bike-rentals
+  - Descrição: Dados históricos de aluguer de bicicletas
+  - Tipo: Tabular
+      - Fonte de dados:
+      - Selecionar de arquivos da Web
+  - URL da Web:
+      - URL da Web: https://aka.ms/bike-rentals
+      - Ignorar validação de dados: não selecione
+  - Configurações:
+      - Formato de arquivo: Delimitado
+      - Delimitador: Vírgula
+      - Codificação: UTF-8
+      - Cabeçalhos de coluna: Somente o primeiro arquivo tem cabeçalhos
+      - Pular linhas: Nenhum
+      - O conjunto de dados contém dados de várias linhas: não selecione
+  - Esquema:
+      - Incluir todas as colunas diferentes de Caminho
+      - Revisar os tipos detectados automaticamente
+    Selecione Criar. Depois que o conjunto de dados for criado, selecione o conjunto de dados de aluguel de bicicletas para continuar a enviar o trabalho de ML automatizado.
+
+  #### Configurações da tarefa:
+
+  - Tipo de tarefa: Regressão
+  - Conjunto de dados: aluguel de bicicletas
+  - Coluna de destino: Aluguéis (inteiro)
+  - Definições de configuração adicionais:
+    - Métrica primária: Erro quadrático médio da raiz normalizada
+    - Explicar melhor modelo: Não selecionado
+    - Use todos os modelos suportados: Nãoselecionado. Você restringirá o trabalho para tentar apenas alguns algoritmos específicos.
+    - Modelos permitidos: selecione apenas RandomForest e LightGBM — normalmente você gostaria de tentar o maior número possível, mas cada modelo adicionado aumenta o tempo necessário     para executar o trabalho.
+  - Limites: expanda esta seção
+     - Máximo de tentativas: 3
+     - Máximo de tentativas simultâneas: 3
+     - Nós máximos: 3
+     - Limiar de pontuação métrica: 0,085 (de modo que, se um modelo atingir uma pontuação métrica quadrática média normalizada de 0,085 ou menos, o trabalho termina.)
+     - Tempo limite: 15
+     - Tempo limite de iteração: 15
+     - Habilitar rescisão antecipada: Selecionado
+  - Validação e teste:
+     - Tipo de validação: Divisão de validação de trem
+     - Porcentagem de dados de validação: 10
+     - Conjunto de dados de teste: Nenhum
+     
+  - Computação:
+     - Selecione o tipo de computação: Serverless
+     - Tipo de máquina virtual: CPU
+     - Camada de máquina virtual: Dedicado
+     - Tamanho da máquina virtual: Standard_DS3_V2*
+     - Número de instâncias: 1
+  * Se sua assinatura restringir os tamanhos de VM disponíveis para você, escolha qualquer tamanho disponível.
+
+  3. Envie o trabalho de treinamento. Ele começa automaticamente.
+
+  4. Aguarde a conclusão do trabalho. Pode demorar um pouco – agora pode ser um bom momento para uma pausa para o café!
+   ##
    ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/7b725ca2-4d43-40e8-a29f-18945a0b7330)
    ##
    ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/cd448180-d599-4a77-948f-3cbe99d8539f)
@@ -102,50 +172,75 @@
   2. Aguarde o início da implantação - isso pode levar alguns segundos. O status de implantação para o ponto de extremidade de aluguel de previsão será indicado na parte principal da 
      página como Em execução.
   3. Aguarde até que o status Implantar seja alterado para Bem-sucedido. Isso pode levar de 5 a 10 minutos.
+  ##
+  ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/b21492a8-c445-4b97-9306-187c42c2da14)
+
 
 
 
 > ## Testar o serviço implantado
+  1. No estúdio do Aprendizado de Máquina do Azure, no menu à esquerda, selecione Pontos de extremidade e abra o ponto de extremidade em tempo real de aluguéis de previsão.
+
+  2. Na página de ponto de extremidade em tempo real de aluguéis de previsão, exiba a guia Teste.
+    ##
+    ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/fa3962b1-7f4d-4bd8-b55f-f6b27d6a67fe)
+
+  4. No painel Dados de entrada para testar o ponto de extremidade, substitua o modelo JSON pelos seguintes dados de entrada:
+     ##
+     ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/210d34d7-df2d-4123-9f6a-65d38bd07a6b)
+
+
+   ## Entrada teste e saida:
+   > [!IMPORTANT]
+   Testando ponto de extremidade parametros
+
+  ```json
+   {
+     "Inputs": { 
+       "data": [
+         {
+           "day": 1,
+           "mnth": 1,   
+           "year": 2022,
+           "season": 2,
+           "holiday": 0,
+           "weekday": 1,
+           "workingday": 1,
+           "weathersit": 2, 
+           "temp": 0.3, 
+           "atemp": 0.3,
+           "hum": 0.3,
+           "windspeed": 0.3 
+         }
+       ]    
+     },   
+     "GlobalParameters": 1.0
+   }
+  ```
+  ## 
+  Resultado do teste
+  
+  ```json
+   {
+     "Results": [
+       444.27799000000000
+     ]
+   }
+  ```
+
 > ## Limpeza
 
+  1. No estúdio do Aprendizado de Máquina do Azure, na guia Pontos de extremidade, selecione o ponto de extremidade de aluguel de previsão. Em seguida, selecione Excluir e confirme que      deseja excluir o ponto de extremidade.
 
-## Entrada teste e saida:
-> [!IMPORTANT]
-Testando ponto de extremidade parametros
+  2. A exclusão da computação garante que sua assinatura não será cobrada por recursos de computação. No entanto, será cobrado um pequeno valor pelo armazenamento de dados, desde que o      espaço de trabalho do Aprendizado de Máquina do Azure exista em sua assinatura. Se você tiver terminado de explorar o Aprendizado de Máquina do Azure, poderá excluir o espaço de 
+     trabalho do Aprendizado de Máquina do Azure e os recursos associados.
 
-```json
- {
-   "Inputs": { 
-     "data": [
-       {
-         "day": 1,
-         "mnth": 1,   
-         "year": 2022,
-         "season": 2,
-         "holiday": 0,
-         "weekday": 1,
-         "workingday": 1,
-         "weathersit": 2, 
-         "temp": 0.3, 
-         "atemp": 0.3,
-         "hum": 0.3,
-         "windspeed": 0.3 
-       }
-     ]    
-   },   
-   "GlobalParameters": 1.0
- }
-```
-## 
-Resultado do teste
+  Para excluir seu espaço de trabalho:
 
-```json
- {
-   "Results": [
-     444.27799000000000
-   ]
- }
-```
+  1. No portal do Azure, na página Grupos de recursos, abra o grupo de recursos especificado ao criar seu espaço de trabalho do Aprendizado de Máquina do Azure.
+  2. Clique em Excluir grupo de recursos, digite o nome do grupo de recursos para confirmar que deseja excluí-lo e selecione Excluir.
+
+
 
   
 ## Referência:
