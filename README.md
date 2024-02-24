@@ -45,9 +45,59 @@
 
 
 > ## Usar o aprendizado de máquina automatizado para treinar um modelo
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/7b725ca2-4d43-40e8-a29f-18945a0b7330)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/cd448180-d599-4a77-948f-3cbe99d8539f)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/e031f2e7-0816-49c8-a855-6f8c9364597f)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/1b131ce1-7431-49b3-bc48-42f384393bd2)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/4ada8fe1-a626-4ca7-86cd-5a3d5c252987)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/d258d996-186f-4023-b905-c8bf363091b1)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/5d4a65f5-c66f-40b1-944c-2e9953896d73)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/45863a01-5f8d-47d5-90fa-1f4798426feb)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/6283fdf9-8b02-4d12-87b4-ff8d75bf8398)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/7ffc2711-8348-494f-b026-bcafa5a93b32)
+   ##
+   Na mesma tela descendo
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/c4c67449-b5a7-4d06-962a-ee863c18a9cf)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/60ece7e0-ed8f-4703-838c-4f7ae82a6c61)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/10e4cf79-98ef-4ae3-9b6d-8d847c80f71c)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/a08eedeb-52b3-44f5-b440-621491bb365a)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/44d3475d-6f72-469b-859a-377977f8b238)
+   ##
+   ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/c4c10d2a-3e87-45c2-8c98-c04f73dd8909)
+   ##
+  2. Selecione o texto em Nome do algoritmo para o melhor modelo para exibir seus detalhes.
+
+  3. Selecione a guia Métricas e selecione os gráficos de resíduos e predicted_true se ainda não estiverem selecionados.
+
+     Analise os gráficos que mostram o desempenho do modelo. O gráfico de resíduos mostra os resíduos (as diferenças entre os valores previstos e reais) como um histograma. O gráfico     predicted_true compara os valores previstos com os valores verdadeiros.
+  ![image](https://github.com/vinicius-campelo/lab-ia900/assets/74797865/416fe842-e860-41f3-94f0-a3900e52d3b6)
 
 
 > ## Implantar e testar o modelo
+
+  1. Na guia Modelo para obter o melhor modelo treinado pelo seu trabalho de aprendizado de máquina automatizado, selecione Implantar e usar a opção Serviço Web para implantar o modelo      com as seguintes configurações:
+        - Nome: predict-rentals
+        - Descrição: Prever aluguéis de ciclos
+        - Tipo de computação: Instância de Contêiner do Azure
+        - Habilitar autenticação: Selecionado
+  2. Aguarde o início da implantação - isso pode levar alguns segundos. O status de implantação para o ponto de extremidade de aluguel de previsão será indicado na parte principal da 
+     página como Em execução.
+  3. Aguarde até que o status Implantar seja alterado para Bem-sucedido. Isso pode levar de 5 a 10 minutos.
+
+
 > ## Testar o serviço implantado
 > ## Limpeza
 
